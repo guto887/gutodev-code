@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guto Dev </> | Criador de Sites & Bots Personalizados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .code-font {
+            font-family: 'Fira Code', monospace;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-alt {
+            background: linear-gradient(135deg, #e5e5e5 0%, #737373 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-glow:hover {
+            box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        /* Classes para alternar as páginas */
+        .page-view {
+            display: none;
+        }
+        .page-view.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-black text-neutral-100 antialiased selection:bg-neutral-200 selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" onclick="mudarPagina('home')" class="flex items-center gap-3">
+
+
+                
+                <img src="https://i.ibb.co/Qvhr47QH/1.jpg" alt="Logo Guto Dev" class="w-10 h-10 rounded-xl object-cover border border-neutral-700 shadow-md">
+                
+                
+                <span class="font-extrabold text-2xl sm:text-3xl tracking-tight">
+                    <span class="text-white">Guto</span> <span class="text-neutral-400">Dev</span> <span class="gradient-text-alt code-font text-xl sm:text-2xl">&lt;/&gt;</span>
+                </span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-400">
+                <button onclick="mudarPagina('home');" class="hover:text-white transition-colors bg-transparent border-none cursor-pointer text-neutral-400 text-sm">Início</button>
+                <button onclick="mudarPagina('home'); document.getElementById('servicos').scrollIntoView();" class="hover:text-white transition-colors bg-transparent border-none cursor-pointer text-neutral-400 text-sm">Serviços</button>
+                <button onclick="mudarPagina('home'); document.getElementById('vantagens').scrollIntoView();" class="hover:text-white transition-colors bg-transparent border-none cursor-pointer text-neutral-400 text-sm">Vantagens</button>
+            </nav>
+
+            <button onclick="mudarPagina('contato')" class="bg-white text-black hover:bg-neutral-200 px-5 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg flex items-center gap-2 cursor-pointer">
+                <i class="fa-brands fa-whatsapp text-lg text-emerald-600"></i> Pedir Orçamento
+            </button>
+        </div>
+    </header>
+
+
+    <main class="pt-20 flex-grow">
+
+        <div id="page-home" class="page-view active">
+
+            <section class="pt-20 pb-20 md:pt-32 md:pb-32 px-4 relative overflow-hidden bg-neutral-950">
+                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/20 rounded-full blur-[140px] pointer-events-none"></div>
+                <div class="max-w-5xl mx-auto text-center relative z-10">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-neutral-300 text-xs sm:text-sm font-semibold mb-6">
+                        <i class="fa-solid fa-code text-white"></i> Criador de Sites & Bots Personalizados
+                    </span>
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                        Transforme seu Negócio com <br class="hidden sm:inline"/>
+                        <span class="gradient-text">Guto Dev</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Desenvolvo sites profissionais de alta conversão para empresas, lojas e cardápios de lanches, além de <strong>Bots de Atendimento e Divulgação no WhatsApp</strong> para automatizar suas vendas 24h por dia!
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button onclick="mudarPagina('contato')" class="w-full sm:w-auto bg-white hover:bg-neutral-200 text-black font-bold px-8 py-4 rounded-xl transition-all shadow-xl flex items-center justify-center gap-3 text-lg cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-2xl text-emerald-600"></i> Fazer Pedido Direto no Zap
+                        </button>
+                        <a href="#servicos" class="w-full sm:w-auto bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-lg">
+                            Ver Tudo que Eu Faço
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-400 font-medium">
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> Preços Acessíveis</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> Sem Mensalidades Abusivas</span>
+                        <span class="flex items-center gap-2"><i class="fa-solid fa-check text-white"></i> Suporte Direto Comigo</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="servicos" class="py-20 bg-black border-y border-neutral-900">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-3xl sm:text-5xl font-bold mb-4">O Que Eu Posso Desenvolver <span class="gradient-text">Para Você?</span></h2>
+                        <p class="text-neutral-400 text-lg">Seja qual for seu tipo de negócio, eu crio a solução ideal com foco em trazer clientes e fechar vendas.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Sites para Empresas & Serviços</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Página profissional completa para divulgar seu trabalho, passar credibilidade e fazer novos clientes entrarem em contato direto pelo seu WhatsApp.
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Design Responsivo (Celular e PC)</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Botão de WhatsApp em Destaque</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Bots para WhatsApp & Atendimento</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Robô inteligente que responde seus clientes sozinho no WhatsApp, tira dúvidas, envia preços, faz cadastros e vende por você 24 horas por dia.
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Menu Interativo de Opções</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Respostas Automáticas Instantâneas</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Sites de Comidas & Lanches</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Cardápio digital atraente para hamburguerias, pizzarias, marmitarias e entregas. O cliente escolhe o lanche e envia o pedido pronto no seu WhatsApp.
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Cardápio com Fotos e Preços</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Pedido Organizado via WhatsApp</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Bots de Divulgação & Disparo</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Aumente suas vendas com sistemas automatizados para divulgar suas ofertas, enviar avisos e alcançar milhares de clientes de forma prática.
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Automação de Mensagens</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Divulgação de Produtos/Serviços</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Sites de Vendas de Produtos</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Página de vendas moderna para você vender qualquer tipo de produto físico ou digital com fotos, descrições detalhadas e botão de compra.
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Vitrine Virtual Atraente</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Foco em Fechamento de Venda</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="bg-neutral-950 border border-neutral-900 p-8 rounded-2xl card-glow transition-all hover:-translate-y-1">
+                            <div class="w-14 h-14 rounded-xl bg-neutral-900 border border-neutral-800 text-white flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 text-white">Sistemas Sob Medida</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+                                Tem uma ideia diferente de Bot ou Site? Você me fala exatamente o que precisa e eu desenvolvo do seu jeito!
+                            </p>
+                            <ul class="text-xs text-neutral-400 space-y-2">
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Personalizado 100% para você</li>
+                                <li><i class="fa-solid fa-check text-white mr-1.5"></i> Projetos Exclusivos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="vantagens" class="py-20 px-4 bg-neutral-950">
+                <div class="max-w-5xl mx-auto bg-neutral-900 border border-neutral-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-neutral-400">Preço justo e acessível</span>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6 text-white">Qualidade de Agência com <span class="gradient-text">Preço que Cabe no Seu Bolso!</span></h2>
+                            <p class="text-neutral-300 text-sm leading-relaxed mb-6">
+                                Você não precisa gastar milhares de reais para ter um site bonito ou um bot automático trabalhando para você. Eu cobro valores baixos e acessíveis, ideais para quem está começando ou quer alavancar as vendas sem complicações!
+                            </p>
+                            <div class="space-y-3 text-sm text-neutral-200">
+                                <div class="flex items-center gap-3">
+                                    <span class="p-1 rounded bg-neutral-800 text-white"><i class="fa-solid fa-check"></i></span>
+                                    <span>Valores combinados diretamente pelo WhatsApp</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="p-1 rounded bg-neutral-800 text-white"><i class="fa-solid fa-check"></i></span>
+                                    <span>Sem taxas escondidas ou surpresas no final</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="p-1 rounded bg-neutral-800 text-white"><i class="fa-solid fa-check"></i></span>
+                                    <span>Pagamento facilitado e entrega rápida</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-black border border-neutral-800 p-6 rounded-2xl text-center">
+                            <div class="text-neutral-200 text-3xl mb-3"><i class="fa-solid fa-piggy-bank"></i></div>
+                            <h3 class="text-xl font-bold mb-2 text-white">Quer saber quanto custa seu projeto?</h3>
+                            <p class="text-neutral-400 text-xs mb-6">Preencha o formulário abaixo com o que você deseja que eu te mostro os valores na hora pelo WhatsApp!</p>
+                            <button onclick="mudarPagina('contato')" class="inline-block w-full bg-white hover:bg-neutral-200 text-black font-bold py-3 rounded-xl transition-all cursor-pointer">
+                                Simular Projeto Gratuitamente
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <div id="page-contato" class="page-view">
+            <section class="py-16 px-4 bg-black min-h-[80vh] flex items-center justify-center">
+                <div class="max-w-2xl w-full">
+                    
+
+                    <button onclick="mudarPagina('home')" class="mb-8 inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors bg-transparent border-none cursor-pointer">
+                        <i class="fa-solid fa-arrow-left"></i> Voltar para a página inicial
+                    </button>
+
+                    <div class="text-center mb-10">
+                        <span class="text-neutral-400 font-semibold text-sm uppercase tracking-wider">Contato Direto</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold mt-2 mb-3 text-white">Me Diga O Que Você Precisa!</h2>
+                        <p class="text-neutral-400 text-sm">Preencha os campos abaixo. Ao clicar em enviar, você será redirecionado para o meu WhatsApp com tudo pronto para conversarmos!</p>
+                    </div>
+
+                    <form id="contactForm" onsubmit="enviarParaWhatsApp(event)" class="bg-neutral-950 border border-neutral-900 p-6 sm:p-10 rounded-3xl space-y-6 shadow-2xl">
+                        <div>
+                            <label class="block text-sm font-semibold text-neutral-300 mb-2" for="nome">Seu Nome *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-neutral-500">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+                                <input type="text" id="nome" required placeholder="Ex: João Silva" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-3 pl-11 pr-4 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-neutral-300 mb-2" for="telefone">Seu Número / WhatsApp *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-neutral-500">
+                                    <i class="fa-solid fa-phone"></i>
+                                </span>
+                                <input type="tel" id="telefone" required placeholder="Ex: (11) 99999-9999" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-3 pl-11 pr-4 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-neutral-300 mb-2" for="tipoServico">O que você quer que eu faça? *</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-neutral-500">
+                                    <i class="fa-solid fa-list-check"></i>
+                                </span>
+                                <select id="tipoServico" required class="w-full bg-neutral-900 border border-neutral-800 rounded-xl py-3 pl-11 pr-4 text-white focus:outline-none focus:border-neutral-500 transition-colors appearance-none">
+                                    <option value="" class="bg-neutral-900">Selecione uma opção...</option>
+                                    <option value="Site para Empresa / Divulgação de Vendas" class="bg-neutral-900">Site para Empresa / Divulgação de Vendas</option>
+                                    <option value="Site de Comidas / Lanches / Cardápio Digital" class="bg-neutral-900">Site de Comidas / Lanches / Cardápio Digital</option>
+                                    <option value="Bot de Atendimento no WhatsApp" class="bg-neutral-900">Bot de Atendimento no WhatsApp</option>
+                                    <option value="Bot de Divulgação / Disparo" class="bg-neutral-900">Bot de Divulgação / Disparo</option>
+                                    <option value="Site + Bot de WhatsApp (Combo Completo)" class="bg-neutral-900">Site + Bot de WhatsApp (Combo Completo)</option>
+                                    <option value="Outro Tipo de Projeto Especial" class="bg-neutral-900">Outro Tipo de Projeto Especial</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-neutral-300 mb-2" for="detalhes">Explique como você quer seu projeto *</label>
+                            <textarea id="detalhes" rows="4" required placeholder="Ex: Quero um site para minha hamburgueria com fotos dos lanches e integração com WhatsApp..." class="w-full bg-neutral-900 border border-neutral-800 rounded-xl p-4 text-white placeholder-neutral-600 focus:outline-none focus:border-neutral-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-white hover:bg-neutral-200 text-black font-extrabold py-4 px-6 rounded-xl transition-all flex items-center justify-center gap-3 text-lg shadow-lg cursor-pointer">
+                            <i class="fa-brands fa-whatsapp text-2xl text-emerald-600"></i> Enviar Detalhes no WhatsApp
+                        </button>
+                        <p class="text-center text-xs text-neutral-500">Seu pedido será enviado formatado diretamente no meu WhatsApp de forma rápida e prática!</p>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-black border-t border-neutral-900 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h3 class="font-extrabold text-2xl mb-2">
+                <span class="text-white">Guto</span> <span class="text-neutral-400">Dev</span> <span class="gradient-text-alt code-font">&lt;/&gt;</span>
+            </h3>
+            <p class="text-neutral-500 text-sm mb-2">&copy; <span id="ano"></span> Guto Dev - Todos os direitos reservados.</p>
+            <p class="text-neutral-600 text-xs">Desenvolvimento de Sites, Landing Pages, Cardápios e Bots para WhatsApp com preço justo.</p>
+        </div>
+    </footer>
+
+
+    <script>
+
+        document.getElementById('ano').innerText = new Date().getFullYear();
+
+
+
+        function mudarPagina(pagina) {
+            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+            if (pagina === 'contato') {
+                document.getElementById('page-contato').classList.add('active');
+            } else {
+                document.getElementById('page-home').classList.add('active');
+            }
+            window.scrollTo(0, 0); 
+        }
+
+
+        const SEU_NUMERO_WHATSAPP = "555189926591"; 
+
+        function enviarParaWhatsApp(event) {
+            event.preventDefault();
+
+
+            const nome = document.getElementById('nome').value;
+            const telefone = document.getElementById('telefone').value;
+            const tipoServico = document.getElementById('tipoServico').value;
+            const detalhes = document.getElementById('detalhes').value;
+
+
+            const mensagem = `👋 *Olá, Guto! Gostaria de fazer um orçamento!* %0A%0A` +
+                `👤 *Nome:* ${encodeURIComponent(nome)}%0A` +
+                `📱 *Contato:* ${encodeURIComponent(telefone)}%0A` +
+                `🚀 *Serviço Desejado:* ${encodeURIComponent(tipoServico)}%0A%0A` +
+                `📝 *Detalhes do Projeto:*%0A${encodeURIComponent(detalhes)}%0A%0A` +
+                `💬 *Me passe os valores por favor!*`;
+
+            const linkWhatsApp = `https://wa.me/${SEU_NUMERO_WHATSAPP}?text=${mensagem}`;
+
+
+            window.open(linkWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
